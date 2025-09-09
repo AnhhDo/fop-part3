@@ -45,7 +45,8 @@ const generateId = () => {
 };
 
 app.get("/", (req, res) => {
-  res.send(console.log("..."));
+  res.send("This is the response the user sees in the browser")
+  console.log("only i can see this")
 });
 
 app.get("/api/persons", (req, res) => {
@@ -108,4 +109,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
 
-//3.8 done
+//3.9 done
