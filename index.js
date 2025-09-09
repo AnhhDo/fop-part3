@@ -41,7 +41,7 @@ let persons = [
 const generateId = () => {
   const id =
     persons.length > 0 ? Math.max(...persons.map((p) => Number(p.id))) : 0;
-  return id + 1;
+  return String(id + 1);
 };
 
 app.get("/", (req, res) => {
