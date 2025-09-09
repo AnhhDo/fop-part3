@@ -46,7 +46,6 @@ const generateId = () => {
 };
 
 app.get("/", (req, res) => {
-  res.send("This is the response the user sees in the browser");
   console.log("only i can see this");
 });
 
