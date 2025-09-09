@@ -2,8 +2,9 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
-app.use(cors())
+app.use(cors());
 app.use(express.json());
+app.use(express.static("dist"));
 
 morgan.token("returnInfo", (req, res) => {
   return JSON.stringify(req.body);
@@ -45,8 +46,8 @@ const generateId = () => {
 };
 
 app.get("/", (req, res) => {
-  res.send("This is the response the user sees in the browser")
-  console.log("only i can see this")
+  res.send("This is the response the user sees in the browser");
+  console.log("only i can see this");
 });
 
 app.get("/api/persons", (req, res) => {
@@ -106,7 +107,7 @@ app.get("/info", (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+  console.log(`Server running on port ${PORT}`);
+});
 
 //3.9 done
