@@ -1,7 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
+
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static("dist"));
@@ -46,6 +48,7 @@ const generateId = () => {
 };
 
 app.get("/", (req, res) => {
+  res.send("<h1>Hello World!</h1>");
   console.log("only i can see this");
 });
 
